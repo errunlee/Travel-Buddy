@@ -1,0 +1,39 @@
+services:
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: redis-server
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+
+  database:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: .
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+      # - redis
+    env_file:
+      - .env
+    command: daphne -b 0.0.0.0 -p 8000 backend.asgi:application
+
+volumes:
+  redis_data:
+  postgres_data:
+  

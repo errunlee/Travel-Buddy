@@ -1,0 +1,8 @@
+django
+daphne
+psycopg2-binary
+djangorestframework
+djangorestframework-simplejwt
+channels
+Pillow
+django-cors-headers
