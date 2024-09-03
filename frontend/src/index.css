@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+	:root {
+		--radius: 0.5rem;
+		font-size: 15px;
+	}
+}
+
+body {
+	background-color: #f4f4f4;
+	font-family: 'Comic Sans MS', cursive;
+}
+.cafe-noir {
+	color: #4b3621;
+}
+
+/* Card / Posts */
+.card {
+	max-width: 650px;
+	box-shadow: 0 0 2px 0 rgba(135, 195, 200, 0.4);
+	margin: auto;
+	margin-top: 3rem;
+	padding: 1rem;
+}
+.card-title {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 2.5rem;
+}
+.start-end {
+	font-weight: bold;
+	color: #333;
+}
+
+.post-card-main {
+	border: 2px dashed #4b3621;
+	cursor: pointer;
+}
+
+.card-title-main {
+	font-size: 1.8rem;
+}
+.card-title-main,
+.card-desc-main {
+	color: #4b3621;
+}
+
+.card-title-main,
+.card-title-detail {
+	text-transform: capitalize;
+}
+/* Details page */
+.post-card-detail {
+	width: 100%;
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem 1.3rem;
+	border: 2px solid #4b3621;
+}
+
+.card-detail-img {
+	border-radius: 1rem;
+	border: 3px solid #4b3621;
+}
+.card-title-detail {
+	font-size: 2.5rem;
+}
+.start-end-detail {
+	font-size: 1.2rem;
+	color: #222;
+	margin-top: 0.3rem;
+	font-weight: bold;
+}
+
+.card-description-detail {
+	margin-top: 1rem;
+	font-size: 1.3rem;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.join-btn {
+	width: 150px;
+	text-align: center;
+	background-color: #4b3621;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	border: none;
+	cursor: pointer;
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+.join-btn:hover {
+	background-color: #6d4c41;
+}
